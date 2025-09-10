@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knowledge Check Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary-orange:#ff7a00;
+  --primary-blue:#0ea5e9;
+  --primary-green:#10b981;
+  --bg-color:#f8fafc;
+  --card-bg:#ffffff;
+  --text-color:#1e293b;
+  --shadow-color: rgba(0,0,0,0.12);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--bg-color);color:var(--text-color);}
+header{
+  background: linear-gradient(90deg,var(--primary-orange),var(--primary-blue));
+  color:white;padding:40px 20px;text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);border-bottom-left-radius:20px;border-bottom-right-radius:20px;
+  animation: headerFade 1s ease forwards;
+}
+@keyframes headerFade{
+  0%{opacity:0;transform:translateY(-20px);}
+  100%{opacity:1;transform:translateY(0);}
+}
+header h1{font-size:36px;font-weight:700;margin-bottom:10px;}
+header p{font-size:18px;opacity:0.9;}
+.intro-section{
+  max-width:1100px;margin:30px auto;padding:0 20px;text-align:center;
+  animation: fadeIn 1s ease forwards;
+}
+@keyframes fadeIn{
+  0%{opacity:0;}
+  100%{opacity:1;}
+}
+.intro-section h2{font-size:28px;color:var(--primary-blue);margin-bottom:12px;}
+.intro-section p{font-size:16px;color:#475569;line-height:1.6;}
+.container{
+  max-width:1200px;margin:40px auto;padding:0 20px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;
+}
+.domain-card{
+  background:var(--card-bg);
+  border-radius:15px;
+  box-shadow:0 8px 25px var(--shadow-color);
+  padding:24px 20px;
+  transition:transform 0.3s ease,box-shadow 0.3s ease;
+  position:relative;overflow:hidden;
+}
+.domain-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 15px 40px var(--shadow-color);
+}
+.domain-title{font-size:22px;font-weight:700;color:var(--primary-blue);margin-bottom:10px;}
+.domain-description{font-size:14px;color:#64748b;line-height:1.5;margin-bottom:16px;}
+.language-buttons{display:flex;flex-wrap:wrap;gap:10px;transition:all 0.3s;}
+.language-buttons button{
+  padding:10px 14px;border:none;border-radius:10px;
+  background: var(--primary-green);color:white;font-weight:600;
+  cursor:pointer;transition: all 0.3s ease, transform 0.3s;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+.language-buttons button:hover{
+  background:var(--text-color);
+  transform: scale(1.1);
+}
+footer{
+  text-align:center;padding:28px 16px;background:var(--primary-blue);color:white;margin-top:50px;border-top-left-radius:20px;border-top-right-radius:20px;
+  font-size:14px;
+}
+@media(max-width:600px){
+  header h1{font-size:28px;}
+  .intro-section h2{font-size:22px;}
+  .domain-title{font-size:20px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Knowledge Check Dashboard</h1>
+  <p>Test your skills across multiple domains and languages. Click a card to select a language and start MCQs!</p>
+</header>
+
+<section class="intro-section">
+  <h2>Domains & Languages</h2>
+  <p>Select a domain below. Each card contains multiple languages and a Mix option for combined questions.</p>
+</section>
+
+<section class="container">
+
+<!-- Frontend -->
+<div class="domain-card">
+  <div class="domain-title">Frontend Development</div>
+  <div class="domain-description">
+    Build beautiful user interfaces and responsive websites.
+    Learn HTML, CSS, JavaScript, and React to become a skilled frontend developer.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=frontend-html')">HTML</button>
+  
+    <button onclick="openMCQ('quiz.html?quiz=frontend-css')">CSS</button>
+    <button onclick="openMCQ('quiz.html?quiz=frontend-js')">JavaScript</button>
+    <button onclick="openMCQ('quiz.html?quiz=frontend-react')">React</button>
+    
+  </div>
+</div>
+
+<!-- Backend -->
+<div class="domain-card">
+  <div class="domain-title">Backend Development</div>
+  <div class="domain-description">
+    Master server-side programming, databases, and APIs.
+    Work with NodeJS, Express, PHP, Laravel, and more to handle backend logic.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=backend-nodejs')">NodeJS</button>
+    <button onclick="openMCQ('quiz.html?quiz=backend-express')">Express</button>
+    <button onclick="openMCQ('quiz.html?quiz=backend-php')">PHP</button>
+    <button onclick="openMCQ('quiz.html?quiz=backend-laravel')">Laravel</button>
+   
+  </div>
+</div>
+
+<!-- Full Stack -->
+<div class="domain-card">
+  <div class="domain-title">Full Stack Development</div>
+  <div class="domain-description">
+    Combine frontend and backend skills to build complete applications.
+    Gain expertise in both client-side and server-side development.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=fullstack-frontend-mix')">Frontend Mix</button>
+    <button onclick="openMCQ('quiz.html?quiz=fullstack-backend-mix')">Backend Mix</button>
+   
+  </div>
+</div>
+
+<!-- AI / ML -->
+<div class="domain-card">
+  <div class="domain-title">AI & Machine Learning</div>
+  <div class="domain-description">
+    Learn AI concepts, ML algorithms, and data science.
+    Practice Python, ML basics, and datasets to build intelligent systems.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=ai-python')">Python</button>
+    <button onclick="openMCQ('quiz.html?quiz=ai-ml')">ML Basics</button>
+    <button onclick="openMCQ('quiz.html?quiz=data-science')">Data Science</button>
+    
+  </div>
+</div>
+
+<!-- MERN Developer -->
+<div class="domain-card">
+  <div class="domain-title">MERN Developer</div>
+  <div class="domain-description">
+    Learn MongoDB, Express, React, NodeJS for full stack MERN applications.
+    Build modern web apps from scratch using this popular stack.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=mern-advanced')">MERN Questions</button>
+    <button onclick="openMCQ('quiz.html?quiz=frontend-react')">React</button>
+     <button onclick="openMCQ('quiz.html?quiz=mongodb')">MongoDB</button>
+      <button onclick="openMCQ('quiz.html?quiz=backend-express')">Express</button>
+       <button onclick="openMCQ('quiz.html?quiz=backend-nodejs')">NodeJS</button>
+
+  </div>
+</div>
+
+<!-- Andriod Developer -->
+<div class="domain-card">
+  <div class="domain-title">Android Developer</div>
+  <div class="domain-description">
+    Learn MongoDB, Express, React, NodeJS for full stack MERN applications.
+    Build modern web apps from scratch using this popular stack.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=java')">JAVA</button>
+    <button onclick="openMCQ('quiz.html?quiz=flutter')">Flutter</button>
+     <button onclick="openMCQ('quiz.html?quiz=kotlin')">Kotlin</button>
+      <button onclick="openMCQ('quiz.html?quiz=cpp')">C++</button>
+       
+      <button onclick="openMCQ('quiz.html?quiz=xml')">XML</button>
+
+
+  </div>
+</div>
+
+
+<!-- Software Engineer -->
+<div class="domain-card">
+  <div class="domain-title">Software Engineer</div>
+  <div class="domain-description">
+    Master algorithms, OOP, and design patterns.
+    Solve real-world problems and build scalable software.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=java')">Java</button>
+    <button onclick="openMCQ('quiz.html?quiz=c')">C</button>
+    <button onclick="openMCQ('quiz.html?quiz=cpp')">C++</button>
+   
+  </div>
+</div>
+
+<!-- Software Developer -->
+<div class="domain-card">
+  <div class="domain-title">Software Developer</div>
+  <div class="domain-description">
+    Focus on application development and coding best practices.
+    Learn to write efficient and maintainable code in multiple languages.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=java')">Java</button>
+    <button onclick="openMCQ('quiz.html?quiz=ai-python')">Python</button>
+    <button onclick="openMCQ('quiz.html?quiz=frontend-js')">JavaScript</button>
+    
+  </div>
+</div>
+
+<!-- DevOps -->
+<div class="domain-card">
+  <div class="domain-title">DevOps</div>
+  <div class="domain-description">
+    Learn CI/CD, containerization, and deployment pipelines.
+    Gain skills in Docker, Jenkins, Kubernetes, and cloud automation.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=docker')">Docker</button>
+    <button onclick="openMCQ('quiz.html?quiz=jenkins')">Jenkins</button>
+    <button onclick="openMCQ('quiz.html?quiz=kubernetes')">Kubernetes</button>
+  
+  </div>
+</div>
+
+<!-- AWS / Cloud -->
+<div class="domain-card">
+  <div class="domain-title">AWS / Cloud</div>
+  <div class="domain-description">
+    Understand cloud computing fundamentals and services.
+    Work with AWS, Azure, GCP to deploy and manage applications.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=aws')">AWS</button>
+    <button onclick="openMCQ('quiz.html?quiz=azure')">Azure</button>
+    <button onclick="openMCQ('quiz.html?quiz=gcp')">GCP</button>
+    
+  </div>
+</div>
+
+<!-- Data Analytics -->
+<div class="domain-card">
+  <div class="domain-title">Data Analytics</div>
+  <div class="domain-description">
+    Learn to analyze data using SQL, Python, Excel, and visualization tools.
+    Extract insights and create reports for business decisions.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=sql')">SQL</button>
+    <button onclick="openMCQ('quiz.html?quiz=ai-python')">Python</button>
+    <button onclick="openMCQ('quiz.html?quiz=r')">R</button>
+
+  </div>
+</div>
+
+<!-- Software QA / Tester -->
+<div class="domain-card">
+  <div class="domain-title">Software QA / Tester</div>
+  <div class="domain-description">
+    Test software quality using manual and automated testing.
+    Ensure apps are bug-free, reliable, and meet user requirements.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=selenium')">Selenium</button>
+    <button onclick="openMCQ('quiz.html?quiz=manual')">Manual Testing</button>
+    <button onclick="openMCQ('quiz.html?quiz=jira')">Jira</button>
+
+  </div>
+</div>
+
+<!-- Cyber Security -->
+<div class="domain-card">
+  <div class="domain-title">Cyber Security</div>
+  <div class="domain-description">
+    Learn to secure systems, networks, and applications.
+    Explore ethical hacking, penetration testing, and risk management.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=network')">Network Security</button>
+    <button onclick="openMCQ('quiz.html?quiz=web')">Web Security</button>
+    <button onclick="openMCQ('quiz.html?quiz=ethical')">Ethical Hacking</button>
+  
+  </div>
+</div>
+
+<!-- Database Management -->
+<div class="domain-card">
+  <div class="domain-title">Database Management</div>
+  <div class="domain-description">
+    Learn to manage databases, write queries, and optimize performance.
+    Work with SQL, MongoDB, PostgreSQL, and more.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=sql')">SQL</button>
+    <button onclick="openMCQ('quiz.html?quiz=mongodb')">MongoDB</button>
+    <button onclick="openMCQ('quiz.html?quiz=postrgesql')">PostgreSQL</button>
+ 
+  </div>
+</div>
+
+<!-- Embedded / IoT -->
+<div class="domain-card">
+  <div class="domain-title">Embedded / IoT</div>
+  <div class="domain-description">
+    Learn embedded systems and IoT device programming.
+    Work with Arduino, Raspberry Pi, and sensors for projects.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=arduino')">Arduino</button>
+    <button onclick="openMCQ('quiz.html?quiz=raspberrypi')">Raspberry Pi</button>
+    
+  </div>
+</div>
+
+<!-- Game Development -->
+<div class="domain-card">
+  <div class="domain-title">Game Development</div>
+  <div class="domain-description">
+    Learn game engines, 2D/3D graphics, and programming.
+    Build games using Unity, Unreal Engine, and C++.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=unity')">Unity</button>
+    <button onclick="openMCQ('quiz.html?quiz=unreal')">Unreal</button>
+    
+    <button onclick="openMCQ('quiz.html?quiz=java')">Java</button>
+
+
+  </div>
+</div>
+
+<!-- Networking -->
+<div class="domain-card">
+  <div class="domain-title">Networking</div>
+  <div class="domain-description">
+    Understand networking protocols, configuration, and security.
+    Learn TCP/IP, routing, switches, and Linux networking skills.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=tcpip')">TCP/IP</button>
+    <button onclick="openMCQ('quiz.html?quiz=linux')">Linux</button>
+
+  </div>
+</div>
+
+<!-- Blockchain -->
+<div class="domain-card">
+  <div class="domain-title">Blockchain</div>
+  <div class="domain-description">
+    Learn blockchain, smart contracts, and crypto development.
+    Explore Ethereum, Solidity, and decentralized apps.
+  </div>
+  <div class="language-buttons">
+    <button onclick="openMCQ('quiz.html?quiz=solidity')">Solidity</button>
+    <button onclick="openMCQ('quiz.html?quiz=ethernet')">Ethereum</button>
+
+  </div>
+</div>
+
+</section>
+
+
+
+</div>
+
+
+
+
+<footer>
+  &copy; 2025 PlacementBridge. All rights reserved.
+</footer>
+
+<script>
+function openMCQ(url){
+
+   window.location.href = url;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlacementBridge - Placement Experience Sharing Platform</title>
+  <link rel="stylesheet" href="styles.css">
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <div class="nav-logo">
+        <a href="#home">
+          <i class="fas fa-graduation-cap logo-icon"></i>
+          <span class="logo-text">PlacementBridge</span>
+        </a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="nav-menu" id="nav-menu">
+        <button class="nav-btn" onclick="scrollToSection('home')">
+          <i class="fas fa-home nav-icon"></i>
+          <span class="nav-text">Home</span>
+        </button>
+        <button class="nav-btn" onclick="scrollToSection('experiences')">
+          <i class="fas fa-play-circle nav-icon"></i>
+          <span class="nav-text">View Experience</span>
+        </button>
+        <button class="nav-btn" onclick="showInterviewPage()">
+          <i class="fas fa-question-circle nav-icon"></i>
+          <span class="nav-text">Placement Questions</span>
+        </button>
+        <button class="nav-btn">
+          <i class="fas fa-user nav-icon"></i>
+          <span class="nav-text">Login / Registration</span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+ 
+  <video class="hero-background" autoplay muted loop playsinline>
+    <source src="57242-485061076.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+    
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1><i class="fas fa-graduation-cap"></i>Your Seniors, Your Mentors</h1>  
+      <p>Watch their stories. Learn their strategies. Ace your placement.</p>
+      <!-- <button class="hero-btn" onclick="scrollToSection('share-experience')">
+        <i class="fas fa-play"></i> Start Exploring
+      </button> -->
+       <button id="plpr">Placement Process</button>
+    </div>
+  </section>
+
+  <!-- ==== FORM SECTION (REPLACED) ==== -->
+  <section id="share-experience" class="form-section">
+    <div class="container">
+      <div class="form-header">
+        <h2>Share Your Experience</h2>
+        <p>Help your juniors by sharing your placement journey</p>
+      </div>
+
+     <div class="form-card">
+  <form id="experienceForm">
+    <div class="input-row">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="text" name="company" placeholder="Company" required>
+    </div>
+    <div class="input-row">
+      <input type="text" name="jobprofile" placeholder="Job Profile" required>
+      <input type="url" name="linkedin" placeholder="LinkedIn URL" required>
+    </div>
+    <div class="input-row">
+      <input type="text" name="placementtype" placeholder="Placement Type" required>
+      <input type="text" name="companytype" placeholder="Company Type" required>
+    </div>
+    <div class="input-row">
+      <input type="url" name="video_url" placeholder="YouTube Video URL">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  <p id="message"></p>
+</div>
+
+    </div>
+  </section>
+
+
+ 
+  <!-- Features Section -->
+  <section id="experiences" class="features-section">
+    <div class="container">
+      <div class="features-header">
+        <h2>Why Choose PlacementBridge?</h2>
+      </div>
+  
+      <div class="features-container">
+        <div class="feature-card">
+          <div class="feature-icon orange-icon">
+            <i class="fas fa-video"></i>
+          </div>
+          <h3>Real Experiences</h3>
+          <p>Watch authentic placement stories from your seniors who've been through the process</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon orange-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3>Company-wise Insights</h3>
+          <p>Explore experiences organized by companies to target your preparation effectively</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon orange-icon">
+            <i class="fas fa-question-circle"></i>
+          </div>
+          <h3>Interview Questions</h3>
+          <p>Access curated interview questions and preparation strategies for different companies</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon purple-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3>Resume Building</h3>
+          <p>Get expert tips and templates to create ATS-friendly resumes that stand out to recruiters</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon blue-icon">
+            <i class="fas fa-microphone"></i>
+          </div>
+          <h3>Mock Interviews</h3>
+          <p>Practice with AI-powered mock interviews and get personalized feedback to improve your performance</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon green-icon">
+            <i class="fas fa-route"></i>
+          </div>
+          <h3>Career Guidance</h3>
+          <p>Receive personalized career roadmaps and mentorship from industry professionals</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==== FOOTER ==== -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-section brand">
+        <h2>PlacementBridge</h2>
+        <p>Helping students crack placements with real experience and smart preparation.</p>
+      </div>
+      
+      <div class="footer-section links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#experience-section">View Experience</a></li>
+          <li><a href="#" onclick="showInterviewPage()">Placement Questions</a></li>
+          <li><a href="#">Login / Register</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section contact">
+        <h3>Contact Us</h3>
+        <p>Email: support@placementbridge.com</p>
+        <p>Phone: +91-9876543210</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 PlacementBridge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ==== SCRIPT FOR FORM SUBMISSION ==== -->
+  <script>
+    const form = document.getElementById('experienceForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const response = await fetch('http://localhost:3000/submit-form', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          message.textContent = "Experience submitted successfully!";
+          message.style.color = "green";
+          form.reset();
+        } else {
+          message.textContent = `Error: ${result.error || "Something went wrong."}`;
+          message.style.color = "red";
+        }
+      } catch (err) {
+        message.textContent = `Request failed: ${err.message}`;
+        message.style.color = "red";
+      }
+    });
+  </script>
+
+ 
+  <script  src="script.js"></script>
+  <script src="https://kit.fontawesome.com/a2d9d5f0a3.js" crossorigin="anonymous"></script>
+</body>
+</html>

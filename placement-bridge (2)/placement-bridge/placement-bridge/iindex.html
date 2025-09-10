@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Bridge - Your Gateway to IT Careers</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1> Placement Process</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="./Knowledge-check/knowledge.html" class="kbtn">Knowledge Check</a></li>
+                <li><a href="#Q&A" class="nav-link">Q&A Forum</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Bridge Your Way to Success</h1>
+            <p class="hero-subtitle">Discover 50+ top IT companies and master their placement processes. Your dream job is just one click away!</p>
+            <button class="cta-button" onclick="scrollToSection('companies')">Explore Companies</button>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <h3>50+</h3>
+                <p>IT Companies</p>
+            </div>
+            <div class="stat-card">
+                <h3>15+</h3>
+                <p>Tech Domains</p>
+            </div>
+            <div class="stat-card">
+                <h3>1000+</h3>
+                <p>Success Stories</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section id="companies" class="filter-section">
+        <div class="container">
+            <h2 class="section-title">Find Your Perfect Company</h2>
+            <div class="filter-controls">
+                <select id="domainFilter" class="filter-select">
+                    <option value="all">All Domains</option>
+                    <option value="web-development">Web Development</option>
+                    <option value="ai-ml">AI/ML</option>
+                    <option value="data-science">Data Science</option>
+                    <option value="backend">Backend Development</option>
+                    <option value="frontend">Frontend Development</option>
+                    <option value="full-stack">Full Stack</option>
+                    <option value="data-analyst">Data Analyst</option>
+                    <option value="devops">DevOps</option>
+                    <option value="mobile">Mobile Development</option>
+                    <option value="cloud">Cloud Computing</option>
+                </select>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search companies...">
+                <button class="filter-button" onclick="applyFilters()">Filter</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Companies Grid -->
+    <section class="companies-section">
+        <div class="container">
+            <div id="companiesGrid" class="companies-grid">
+                <!-- Companies will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Trends Section -->
+    <section id="trends" class="trends-section">
+        <div class="container">
+            <h2 class="section-title">Hiring Trends & Analytics</h2>
+            <div class="trends-grid">
+                <div class="trend-card">
+                    <h3>Top Hiring Companies 2024</h3>
+                    <canvas id="hiringChart" width="400" height="200"></canvas>
+                </div>
+                <div class="trend-card">
+                    <h3>Most In-Demand Skills</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span>JavaScript</span>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Python</span>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>React</span>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Node.js</span>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Machine Learning</span>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Placement Bridge</h3>
+                    <p>Connecting students with their dream IT careers through comprehensive placement guidance.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#companies">Companies</a></li>
+                        <li><a href="#trends">Trends</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@placementbridge.com</p>
+                    <p>Phone: +91 9876543210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Placement Bridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scriptt.js"></script>
+</body>
+</html>
